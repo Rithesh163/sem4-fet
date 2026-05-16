@@ -1,0 +1,107 @@
+
+        <!DOCTYPE html>
+<html>
+<head>
+<title>Menu and List Box</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(to right,#ff512f,#dd2476);
+text-align:center;
+margin-top:50px;
+color:white;
+}
+
+.box{
+background:rgba(255,255,255,0.15);
+width:320px;
+margin:auto;
+padding:20px;
+border-radius:12px;
+}
+
+select{
+width:220px;
+padding:8px;
+margin:10px;
+border:none;
+border-radius:5px;
+}
+
+h2{
+color:#fff176;
+}
+
+a{
+text-decoration:none;
+background:white;
+color:#dd2476;
+padding:10px 15px;
+border-radius:8px;
+font-weight:bold;
+display:inline-block;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Course Selection</h2>
+
+<select id="menu">
+
+<option>Select Course</option>
+<option>C</option>
+<option>Java</option>
+<option>Python</option>
+
+</select>
+
+<br>
+
+<select id="list" size="3">
+
+<option>HTML</option>
+<option>CSS</option>
+<option>JavaScript</option>
+
+</select>
+
+<h3 id="result"></h3>
+
+<a href="https://sanjanadevadiga.github.io/4SEM-FET/">
+My Resume
+</a>
+
+</div>
+
+<script>
+
+let menu=document.getElementById("menu");
+
+let list=document.getElementById("list");
+
+menu.addEventListener("change",show);
+
+list.addEventListener("click",show);
+
+function show(){
+
+document.getElementById("result").innerHTML=
+
+"Menu: "+menu.value+
+
+"<br>List: "+list.value;
+
+}
+
+</script>
+
+</body>
+</html>
