@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Z-Index Stacking Lab</title>
+
+<style>
+
+body{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+background:linear-gradient(to right,#ff512f,#dd2476);
+font-family:Arial,sans-serif;
+color:white;
+}
+
+.info{
+text-align:center;
+margin-bottom:40px;
+}
+
+.container{
+position:relative;
+width:350px;
+height:350px;
+}
+
+.card{
+width:200px;
+height:250px;
+position:absolute;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:25px;
+font-weight:bold;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.red{
+background:#ff4b5c;
+top:0;
+left:0;
+}
+
+.blue{
+background:#3498db;
+top:40px;
+left:40px;
+}
+
+.green{
+background:#2ecc71;
+top:80px;
+left:80px;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+a{
+text-decoration:none;
+background:white;
+color:#dd2476;
+padding:10px 15px;
+border-radius:8px;
+font-weight:bold;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="info">
+
+<h1 style="color:#fff176;">
+Dynamic Z-Index Stacking
+</h1>
+
+<p>
+Click any card to bring it to the front.
+</p>
+
+</div>
+
+<div class="container">
+
+<div id="card1" class="card red"
+onclick="bringToFront('card1')">
+Card 1
+</div>
+
+<div id="card2" class="card blue"
+onclick="bringToFront('card2')">
+Card 2
+</div>
+
+<div id="card3" class="card green"
+onclick="bringToFront('card3')">
+Card 3
+</div>
+
+</div>
+
+<br><br>
+
+<a href="https://sanjanadevadiga.github.io/4SEM-FET/">
+My Resume
+</a>
+
+<script>
+
+let highestZ=1;
+
+function bringToFront(elementId){
+
+highestZ++;
+
+const element=document.getElementById(elementId);
+
+element.style.zIndex=highestZ;
+
+}
+
+</script>
+
+</body>
+</html>
